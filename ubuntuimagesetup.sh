@@ -21,9 +21,9 @@ sudo useradd -m adminuser
 #sudo passwd adminuser #password=....
 #sudo passwd root #password=....
 #if Automating. 
-sudo usermod --password password adminuser #
-sudo usermod --password password ubuntu #
-sudo usermod --password password root #
+sudo passwd adminuser #
+sudo passwd ubuntu #
+sudo passwd root #
 
 #Make users sudoers
 sudo echo ' adminuser ALL=(ALL)   ALL' >> /etc/sudoers
