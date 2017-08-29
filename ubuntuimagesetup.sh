@@ -30,7 +30,8 @@ sudo echo ' adminuser ALL=(ALL)   ALL' >> /etc/sudoers
 sudo echo ' ubuntu ALL=(ALL)   ALL' >> /etc/sudoers
 
 #=================Install utilities. 
-sudo apt-get update
+sudo apt-get update -y
+apt-get install weechat -y 
 sudo apt-get install vim tree -y
 sudo apt-get install docker.io -y
 #Or else be root
