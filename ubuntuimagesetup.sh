@@ -16,7 +16,7 @@ sudo /etc/init.d/ssh restart
 sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 
 #Add new user, and change/set passwords for existing users. 
-#sudo useradd -m adminuser
+sudo useradd -m adminuser
 #sudo passwd ubuntu #password=....
 #sudo passwd adminuser #password=....
 #sudo passwd root #password=....
@@ -35,4 +35,4 @@ sudo apt-get install vim tree -y
 sudo apt-get install docker.io -y
 #Or else be root
 sudo usermod -a -G docker adminuser
- 
+su - adminuser
