@@ -9,15 +9,21 @@
 #=================set up future logins=================
 #Set up password login. 
 
-sudo vim /etc/ssh/sshd_config
+#sudo vim /etc/ssh/sshd_config
 #change 'PasswordAuthentication yes', default = no
+#if automatin it
 sudo /etc/init.d/ssh restart
+sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 
 #Add new user, and change/set passwords for existing users. 
-sudo useradd -m adminuser
-sudo passwd ubuntu #password=....
-sudo passwd adminuser #password=....
-sudo passwd root #password=....
+#sudo useradd -m adminuser
+#sudo passwd ubuntu #password=....
+#sudo passwd adminuser #password=....
+#sudo passwd root #password=....
+#if Automating. 
+sudo usermod --password password adminuser #
+sudo usermod --password password ubuntu #
+sudo usermod --password password root #
 
 #Make users sudoers
 sudo echo ' adminuser ALL=(ALL)   ALL' >> /etc/sudoers
