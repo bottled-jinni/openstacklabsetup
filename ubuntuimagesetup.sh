@@ -12,11 +12,12 @@
 #sudo vim /etc/ssh/sshd_config
 #change 'PasswordAuthentication yes', default = no
 #if automatin it
-sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-sudo /etc/init.d/ssh restart
+sudo su
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+/etc/init.d/ssh restart
 
 #Add new user, and change/set passwords for existing users. 
-sudo useradd -m adminuser
+useradd -m adminuser
 #sudo passwd ubuntu #password=....
 #sudo passwd adminuser #password=....
 #sudo passwd root #password=....
@@ -28,7 +29,7 @@ echo -e "password\npassword" | passwd adminuser
 echo -e "password\npassword" | passwd ubuntu
 
 #Make users sudoers
-sudo su #now user = ubuntu
+
 echo ' adminuser ALL=(ALL)   ALL' >> /etc/sudoers
 echo ' ubuntu ALL=(ALL)   ALL' >> /etc/sudoers
 
@@ -39,4 +40,3 @@ apt-get install vim tree -y
 apt-get install docker.io -y
 #Or else be root
 usermod -a -G docker adminuser
-su - adminuser
