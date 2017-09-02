@@ -12,8 +12,8 @@
 #sudo vim /etc/ssh/sshd_config
 #change 'PasswordAuthentication yes', default = no
 #if automatin it
-sudo /etc/init.d/ssh restart
 sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+sudo /etc/init.d/ssh restart
 
 #Add new user, and change/set passwords for existing users. 
 sudo useradd -m adminuser
