@@ -29,12 +29,12 @@ sudo passwd root #
 sudo su #now user = ubuntu
 echo ' adminuser ALL=(ALL)   ALL' >> /etc/sudoers
 echo ' ubuntu ALL=(ALL)   ALL' >> /etc/sudoers
-exit
+
 #=================Install utilities. 
-sudo apt-get update -y
+apt-get update -y
 apt-get install weechat -y 
-sudo apt-get install vim tree -y
-sudo apt-get install docker.io -y
+apt-get install vim tree -y
+apt-get install docker.io -y
 #Or else be root
 sudo usermod -a -G docker adminuser
 su - adminuser
