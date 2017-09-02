@@ -21,9 +21,11 @@ sudo useradd -m adminuser
 #sudo passwd adminuser #password=....
 #sudo passwd root #password=....
 #if Automating. 
-sudo passwd adminuser #
-sudo passwd ubuntu #
-sudo passwd root #
+#sudo passwd adminuser #
+#sudo passwd ubuntu #
+#sudo passwd root #
+echo -e "password\npassword" | passwd adminuser
+echo -e "password\npassword" | passwd ubuntu
 
 #Make users sudoers
 sudo su #now user = ubuntu
@@ -36,5 +38,5 @@ apt-get install weechat -y
 apt-get install vim tree -y
 apt-get install docker.io -y
 #Or else be root
-sudo usermod -a -G docker adminuser
+usermod -a -G docker adminuser
 su - adminuser
