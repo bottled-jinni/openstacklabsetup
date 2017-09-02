@@ -26,9 +26,10 @@ sudo passwd ubuntu #
 sudo passwd root #
 
 #Make users sudoers
-sudo echo ' adminuser ALL=(ALL)   ALL' >> /etc/sudoers
-sudo echo ' ubuntu ALL=(ALL)   ALL' >> /etc/sudoers
-
+sudo su #now user = ubuntu
+echo ' adminuser ALL=(ALL)   ALL' >> /etc/sudoers
+echo ' ubuntu ALL=(ALL)   ALL' >> /etc/sudoers
+exit
 #=================Install utilities. 
 sudo apt-get update -y
 apt-get install weechat -y 
